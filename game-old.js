@@ -1,10 +1,6 @@
 console.log('Welcome to Cee-Lo');
 
-function initialize() {
-  var die = 0;
-  var player = [];
 
-}
 
 var die = 0;
 var player1 = [], computer = [];
