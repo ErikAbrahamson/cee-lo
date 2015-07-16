@@ -16,18 +16,18 @@ var ceeLo = {
         }
     },
 
-  compare: function() {
-    var turn = 'Type ceeLo.reset() to play again';
-    var sum = function(side) {
+    compare: function() {
+      var turn = 'Type ceeLo.reset() to play again';
+      var sum = function(side) {
       var sideSum = 0;
-      for (var i = 0; i < side.length; i++) {
-        sideSum = sideSum + side[i];
-      }
-      return sideSum;
-    };
-    if (sum(player) > sum(computer)) {
-      console.log('player wins!', player + ' > ' + computer + '\n' + turn);
-    } else {
+        for (var i = 0; i < side.length; i++) {
+          sideSum = sideSum + side[i];
+        }
+        return sideSum;
+      };
+      if (sum(player) > sum(computer)) {
+        console.log('player wins!', player + ' > ' + computer + '\n' + turn);
+      } else {
       console.log('computer wins :(', computer + ' > ' + player + '\n' + turn);
     }
   }
