@@ -2,11 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
-    <script type="text/javascript" src="game.js">
-    </script>
+    <title>Cee-Lo</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-
+  <header>
+    <h1>Cee-Lo</h1>
+    <em>a dice rolling game</em>
+    <img src="break.jpg">
+  </header>
+  <section class="button-list">
+    <button id="roll">Roll</button>
+    <button id="compare">Compare</button>
+    <button id="reset">Reset</button>
+  </section>
+  <section class="container">
+    <div class="top player-hand"></div>
+    <div class="bottom computer-hand"></div>
+  </section>
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="dom-buttons.js"></script>
   </body>
 </html>
