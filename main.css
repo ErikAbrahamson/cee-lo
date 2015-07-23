@@ -21,10 +21,16 @@ button {
   width: 15%;
   padding: 10px;
 }
+p {
+  font-size: 12em;
+  display: inline;
+  margin: 0 5%;
+  text-align: center;
+}
 .container {
+  text-align: center;
   display: block;
   height: 500px;
-  border: 1px solid;
 }
 .button-list {
   display: inline-block;
@@ -37,9 +43,8 @@ button {
   width: 100%;
   display: inline-block;
   height: 49.5%;
-  border: 1px dotted black;
 }
-.top { float: left; }
+.top { float: left; border-bottom: 2px solid; }
 .bottom { float: right; }
 
 
