@@ -2,6 +2,7 @@
 var reset = document.getElementById('reset');
 reset.addEventListener('click', function() {
   ceeLo.reset();
+  ceeLo.roll(computer);
   console.log('Game has been reset!');
 });
 
@@ -9,7 +10,17 @@ reset.addEventListener('click', function() {
 var compare = document.getElementById('compare');
 compare.addEventListener('click', function() {
   ceeLo.compare();
-  console.log('Rolls have been compared!');
+  if (player.length > 0) {
+    console.log('Rolls have been compared!');
+  } else {
+    console.log('You have not rolled yet.');
+  }
+});
+
+// Roll button
+var roll = document.getElementById('roll');
+roll.addEventListener('click', function() {
+  ceeLo.roll(player);
 });
 
 
