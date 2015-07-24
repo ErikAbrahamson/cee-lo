@@ -50,4 +50,13 @@ p {
 .top { float: left; border-bottom: 2px solid; }
 .bottom { float: right; }
 
+#outcome {
+  width: 100%;
+}
+#outcome p {
+  font-size: 64px;
+  font-weight: bold;
+  color: gold;
+}
+
 

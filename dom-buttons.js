@@ -27,7 +27,5 @@ var playerBox = document.getElementById('player-hand');
 var computerBox = document.getElementById('computer-hand');
 var textnode;
 
-var p1 = computerBox.children[0];
-var p2 = computerBox.children[1];
-var p3 = computerBox.children[2];
+var outcome = document.getElementById('outcome');
 
