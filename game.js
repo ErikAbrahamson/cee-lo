@@ -1,8 +1,7 @@
 // Initial game set-up
 window.onload = function() {
   ceeLo.reset();
-  console.log('test');
-}
+};
 var player = [], computer = [];
 var dice = [
   { face: '\u2680', value: 1 },
@@ -15,22 +14,37 @@ var dice = [
 
 // Create modular ceeLo functions
 var ceeLo = {
+
   reset: function() {
     player = [];
     computer = [];
-    ceeLo.roll(computer);
-    playerBox.innerHTML = '';
-    computerBox.innerHTML = '';
-    return console.log('Welcome to Cee-lo');
+    if (playerBox.childNodes.length === 1 || computerBox.childNodes.length === 1) {
+      playerBox.removeChild(p);
+      computerBox.removeChild(p);
+    }
+    console.log('Welcome to Cee-lo');
+  },
+
+  reroll: function(player) {
+    var die = 0;
+    for(var i = 0; i < 3; i++) {
+      die = Math.ceil(Math.random() * dice.length - 1);
+      player.push(dice[die]);
+    }
   },
 
   roll: function(player) {
-    var die = 0;
-      for (var i = 0; i < 3; i++) {
-        die = Math.ceil(Math.random() * dice.length - 1);
-        player.push(dice[die]);
+    ceeLo.reroll(computer);
+    if (player === undefined || player.length === 0) {
+      ceeLo.reroll(player);
+    } else {
+      player = [];
+      computer = [];
+      console.log('fail');
+      ceeLo.reroll(player);
+      ceeLo.displayDice(player, playerBox);
       }
-  },
+    },
 
   compare: function() {
     var turn = 'Please press Reset to play again';
@@ -42,17 +56,18 @@ var ceeLo = {
         return sideSum;
       };
     if (sum(player) > sum(computer)) {
-      console.log('player wins!', player + ' ' + computer + '\n' + turn);
+      console.log('Player wins');
     } else {
-      console.log('computer wins :(', computer + ' ' + player + '\n' + turn);
+      console.log('Computer wins');
     }
   },
 
   displayDice: function(player, playerSide) {
+    playerBox.innerHTML = '';
     for (var i = 0; i < player.length; i++) {
       textnode = document.createTextNode(player[i].face);
-      p.appendChild(textnode);
-      playerSide.appendChild(p);
+        p.appendChild(textnode);
+        playerSide.appendChild(p);
     }
   }
 };
