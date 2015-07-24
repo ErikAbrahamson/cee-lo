@@ -18,10 +18,6 @@ var ceeLo = {
   reset: function() {
     player = [];
     computer = [];
-    if (playerBox.childNodes.length === 1 || computerBox.childNodes.length === 1) {
-      playerBox.removeChild(p);
-      computerBox.removeChild(p);
-    }
     console.log('Welcome to Cee-lo');
   },
 
@@ -37,24 +33,24 @@ var ceeLo = {
     ceeLo.reroll(computer);
     if (player === undefined || player.length === 0) {
       ceeLo.reroll(player);
+      ceeLo.displayDice(player, playerBox);
     } else {
       player = [];
       computer = [];
-      console.log('fail');
       ceeLo.reroll(player);
       ceeLo.displayDice(player, playerBox);
       }
     },
 
   compare: function() {
-    var turn = 'Please press Reset to play again';
-      var sum = function(array) {
-        var sideSum = 0;
-        for (var i = 0; i < array.length; i++) {
-          sideSum = sideSum + array[i].value;
-        }
-        return sideSum;
-      };
+    var sum = function(array) {
+      var sideSum = 0;
+      for (var i = 0; i < array.length; i++) {
+        sideSum = sideSum + array[i].value;
+      }
+      ceeLo.displayDice(computer, computerBox);
+      return sideSum;
+    };
     if (sum(player) > sum(computer)) {
       console.log('Player wins');
     } else {
@@ -63,11 +59,10 @@ var ceeLo = {
   },
 
   displayDice: function(player, playerSide) {
-    playerBox.innerHTML = '';
     for (var i = 0; i < player.length; i++) {
       textnode = document.createTextNode(player[i].face);
-        p.appendChild(textnode);
-        playerSide.appendChild(p);
+      p.appendChild(textnode)
+      playerSide.appendChild(p);
     }
   }
 };

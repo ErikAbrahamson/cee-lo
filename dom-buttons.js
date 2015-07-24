@@ -19,7 +19,6 @@ compare.addEventListener('click', function() {
 var roll = document.getElementById('roll');
 roll.addEventListener('click', function() {
   ceeLo.roll(player);
-  ceeLo.displayDice(player, playerBox);
 });
 
 // DOM variables
