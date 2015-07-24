@@ -18,6 +18,8 @@ var ceeLo = {
   reset: function() {
     player = [];
     computer = [];
+    playerBox.innerHTML = '';
+    computerBox.innerHTML = '';
     console.log('Welcome to Cee-lo');
   },
 
@@ -59,10 +61,18 @@ var ceeLo = {
   },
 
   displayDice: function(player, playerSide) {
-    for (var i = 0; i < player.length; i++) {
-      textnode = document.createTextNode(player[i].face);
-      p.appendChild(textnode)
-      playerSide.appendChild(p);
+    for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < player.length; i++) {
+        var p = document.createElement('p');
+        textnode = document.createTextNode(player[i].face);
+        p.appendChild(textnode);
+        playerSide.appendChild(p);
+      }
+    }
+    if (computerBox.childNodes.length === 0) {
+      var computerBox = document.getElementById('computer-hand');
+      computerBox.removeChildren(p);
+
     }
   }
 };
