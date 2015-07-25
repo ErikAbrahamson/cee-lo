@@ -1,4 +1,4 @@
-// Reset button
+  // Reset button
   var reset = document.getElementById('reset');
   reset.addEventListener('click', function() {
     ceeLo.reset();
@@ -22,10 +22,8 @@ roll.addEventListener('click', function() {
 });
 
 // DOM variables
-
+var textnode;
 var playerBox = document.getElementById('player-hand');
 var computerBox = document.getElementById('computer-hand');
-var textnode;
-
 var outcome = document.getElementById('outcome');
 
