@@ -49,6 +49,8 @@ p {
 }
 .top { float: left; border-bottom: 2px solid; }
 .bottom { float: right; }
+.show { display: block; }
+.hide { display: none; }
 
 #outcome {
   width: 100%;

@@ -34,6 +34,7 @@ var ceeLo = {
 
   roll: function(player) {
     ceeLo.reroll(computer);
+    document.getElementById('computer-hand').style.display = 'none';
     ceeLo.displayDice(computer, computerBox);
     if (player === undefined || player.length === 0) {
       ceeLo.reroll(player);
@@ -47,6 +48,7 @@ var ceeLo = {
     },
 
   compare: function() {
+    document.getElementById('computer-hand').style.display = 'block';
     var sum = function(array) {
       var sideSum = 0;
       for (var i = 0; i < array.length; i++) {

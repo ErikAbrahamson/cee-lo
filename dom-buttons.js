@@ -26,4 +26,5 @@ var textnode;
 var playerBox = document.getElementById('player-hand');
 var computerBox = document.getElementById('computer-hand');
 var outcome = document.getElementById('outcome');
+var computerDice = computerBox.getElementsByTagName('p');
 
